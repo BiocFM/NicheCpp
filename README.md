@@ -1,4 +1,8 @@
 # NicheCpp
+
+NicheCpp is an experimental libtorch implementation of the `nicheformer` framework.  See [theislab github](https://github.com/theislab/nicheformer)
+for the python code base.  See also the [paper](https://www.nature.com/articles/s41592-025-02814-z)
+by Tejada-Lapuerta et al.
   
 ## Requirements  
   
