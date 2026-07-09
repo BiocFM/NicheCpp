@@ -55,6 +55,18 @@ cmake --build build
 
 Input any image as an argument as you like.
 
-```
+```cmd
 ./build/run_nicheformer
+```
+
+```
+=== Summary ===
+parameter tensors: 160
+parameter values : 48955252
+parameter memory : 186.75 MB
+buffer tensors   : 1
+buffer values    : 1500
+buffer memory    : 11.72 KB
+total values     : 48956752
+total memory     : 186.76 MB
 ```
