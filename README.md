@@ -23,13 +23,12 @@ Extract the archive so that you have a folder named `libtorch` inside the projec
 
 ### 2. Configure torchscript  
 
-Build a environment with the following requirements.
+Build a environment with the following requirements, and run `make_torchscript.ipynb` inside `nicheformer_model` to generate `nicheformer_embeddings.pt`
 
 ```cmd
+cd nicheformer_model
 conda activate -f environment.yml
 ```
-
-Run `make_torchscript.ipynb` to generate `nicheformer_embeddings.pt`
 
 ### 3. Build with CMake  
 
