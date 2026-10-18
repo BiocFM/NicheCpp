@@ -1,4 +1,5 @@
 build
 libtorch
 *.zip
-
+*.h5ad
+*.npy
