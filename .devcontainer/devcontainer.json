@@ -1,0 +1,40 @@
+{
+  "name": "Nicheformer Dev Container",
+  "build": {
+    "dockerfile": "../nicheformer/Dockerfile",
+    "context": "../nicheformer"
+  },
+  "runArgs": ["--gpus", "all", "--shm-size=8g"],
+
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/project,type=bind",
+  "workspaceFolder": "/workspaces/project",
+  "forwardPorts": [8888],
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter",
+        "ms-toolsai.jupyter",
+        "charliermarsh.ruff",
+        "REditorSupport.r",
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "ms-azuretools.vscode-docker",
+        "GitHub.copilot"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/venv/bin/python",
+        "python.terminal.activateEnvironment": true,
+        "r.rterm.linux": "/usr/bin/R",
+        "cmake.sourceDirectory": "${workspaceFolder}/nicheformer/C",
+        "cmake.configureSettings": {
+          "CMAKE_PREFIX_PATH": "/opt/venv/lib/python3.12/site-packages/torch/share/cmake"
+        }
+      }
+    }
+  },
+
+  "postCreateCommand": "nvidia-smi && python -c \"import torch; print('torch', torch.__version__, 'cuda', torch.cuda.is_available())\" && Rscript -e 'cat(\"R torch cuda:\", torch::cuda_is_available(), \"\\n\")'"
+}
