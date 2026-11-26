@@ -1,0 +1,7 @@
+# Keep the build context small: data, models and notebooks are mounted at runtime.
+Python/
+R/
+C/build/
+**/*.ckpt
+**/*.h5ad
+**/*.pt
